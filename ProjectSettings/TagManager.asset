@@ -4,8 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Color
-  - Shape
+  - Candy
   layers:
   - Default
   - TransparentFX
@@ -13,8 +12,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Images
-  - Colors
+  - 
+  - 
   - 
   - 
   - 
@@ -44,11 +43,14 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Background
-    uniqueID: 3534890581
+    uniqueID: 4051681011
     locked: 0
-  - name: Gameplay
-    uniqueID: 1630439975
+  - name: Player
+    uniqueID: 902894267
     locked: 0
-  - name: Fourground
-    uniqueID: 2780623675
+  - name: UI
+    uniqueID: 1392372979
+    locked: 0
+  - name: GUI
+    uniqueID: 1312638885
     locked: 0
