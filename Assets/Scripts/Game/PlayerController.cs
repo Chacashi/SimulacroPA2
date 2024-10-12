@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody2D _compRigidbody2D;
     [SerializeField] float speed;
+    [SerializeField] int livesPlayer = 3;
     float vertical;
 
     private void Awake()
@@ -23,5 +24,10 @@ public class PlayerController : MonoBehaviour
     public void Vertical(InputAction.CallbackContext context)
     {
         vertical = context.ReadValue<float>();
+    }
+
+     public  int GetLivesPlayer()
+    {
+        return livesPlayer;
     }
 }

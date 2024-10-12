@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CandyGenerator : MonoBehaviour
+public class ObjectsGenerator : MonoBehaviour
 {
-    public static CandyGenerator instance;
+    public static ObjectsGenerator instance;
     public List<GameObject> Candies = new List<GameObject>();
     private float time_to_create = 4f;
     private float actual_time = 0f;
@@ -48,28 +48,28 @@ public class CandyGenerator : MonoBehaviour
         limitSuperior = (bounds.y * 0.9f);
     }
 
-    public void ManageCandy(CandyController candy_script, PlayerController player_script = null)
+    public void ManageObjects(ObjectsController candy_script, PlayerController player_script = null)
     {
         if (player_script == null)
-        {
-            Destroy(candy_script.gameObject);
-            return;
-        }
-        if (candy_script.frame == 3)
-        {
-            SceneManager.LoadScene("GameOver");
-            return;
-        }
-        //int lives = player_script.player_lives;
-        int live_changer = candy_script.lifeChanges;
+       {
+           Destroy(candy_script.gameObject);
+           return;
+       }
+       // if (candy_script.frame == 3)
+      //  {
+       //     SceneManager.LoadScene("GameOver");
+      //      return;
+      //  }
+        int lives = player_script.GetLivesPlayer();
+       // int live_changer = candy_script.lifeChanges;
         //lives += live_changer;
         //print(lives);
-        //if (lives <= 0)
-        {
+        if (lives <= 0)
+       {
             SceneManager.LoadScene("GameOver");
         }
        // player_script.player_lives = lives;
-        Destroy(candy_script.gameObject);
+        //Destroy(candy_script.gameObject);
     }
 
 
